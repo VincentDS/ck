@@ -5,9 +5,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.github.mauricioaniche.mc.MetricsCalculator;
-import com.github.mauricioaniche.mc.MetricsNumber;
 import com.github.mauricioaniche.mc.MetricsReport;
-import com.github.mauricioaniche.mc.metrics.ck.CKNumber;
 import com.github.mauricioaniche.mc.metrics.selenium.SeleniumNumber;
 
 public class SelectorsTest extends SeleniumTest {

@@ -63,6 +63,10 @@ public class MetricsCalculator {
 			log.info("Next partition");
 			ASTParser parser = ASTParser.newParser(AST.JLS8);
 			
+			String[] classpath = java.lang.System.getProperty( "java.class.path" ).split(";");
+
+//			System.out.println(Arrays.toString(classpath));
+			
 			parser.setResolveBindings(true);
 			parser.setBindingsRecovery(true);
 			parser.setKind(ASTParser.K_COMPILATION_UNIT);
@@ -70,7 +74,7 @@ public class MetricsCalculator {
 			Map<?, ?> options = JavaCore.getOptions();
 			JavaCore.setComplianceOptions(JavaCore.VERSION_1_8, options);
 			parser.setCompilerOptions(options);
-			parser.setEnvironment(null, srcDirs, null, true);
+			parser.setEnvironment(classpath, srcDirs, null, true);
 			parser.createASTs(partition.toArray(new String[partition.size()]), null, new String[0], storage, null);
 		}
 		

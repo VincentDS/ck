@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Selectors {
 	
+	
 	public void selectElements() {
 		WebDriver driver = new FirefoxDriver();
 		driver.get("selectors.html");

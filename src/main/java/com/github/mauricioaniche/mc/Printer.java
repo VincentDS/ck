@@ -72,7 +72,15 @@ public class Printer {
 					selenium.getFile() + "," +
 					selenium.getClassName() + "," +
 					selenium.getType() + "," +
-					selenium.getNows() + "," +
+					selenium.getNose() + "," +
+					selenium.getNos() + "," +
+					selenium.getNosId() + "," +
+					selenium.getNosXPath() + "," +
+					selenium.getNosCssSelector() + "," +
+					selenium.getNosName() + "," +
+					selenium.getNosClassName() + "," +
+					selenium.getNosTagName() + "," +
+					selenium.getNosLinkText() + ", " + 
 					selenium.getLoc()
 				);
 			}

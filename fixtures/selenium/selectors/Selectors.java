@@ -11,7 +11,7 @@ public class Selectors {
 	
 	public void selectElements() {
 		WebDriver driver = new FirefoxDriver();
-		driver.get("selectors.html");
+		driver.get("../page.html");
 		
 		WebElement nameInput1 = driver.findElement(By.id("name"));
 		WebElement nameInput2 = driver.findElement(By.className("email"));

@@ -11,9 +11,17 @@ import com.github.mauricioaniche.mc.Metric;
 import com.github.mauricioaniche.mc.MetricsNumber;
 import com.github.mauricioaniche.mc.MetricsReport;
 
-public class NOWS extends ASTVisitor implements Metric {
+public class NOS extends ASTVisitor implements Metric {
 
-	private int weakSelectors;
+	private int nos; 
+	private int nosId;
+	private int nosXPath; 
+	private int nosCssSelector;
+	private int nosName;
+	private int nosTagName; 
+	private int nosClassName; 
+	private int nosLinkText; 
+	
 	private static Logger log = Logger.getLogger(Metric.class);
 
 	
@@ -24,8 +32,31 @@ public class NOWS extends ASTVisitor implements Metric {
 		if (name.equals("findElement")) {
 			MethodInvocation argument = (MethodInvocation) node.arguments().get(0);
 			String selector = getSelectorType(argument);
-			if (!selector.equals("id")) {
-				weakSelectors++;
+			nos++;
+			switch (selector) {
+			case "id":
+				nosId++;
+				break;
+			case "xpath":
+				nosXPath++;
+				break;
+			case "cssSelector":
+				nosCssSelector++;
+				break;
+			case "name":
+				nosName++;
+				break;
+			case "tagName":
+				nosTagName++;
+				break;
+			case "className":
+				nosClassName++;
+				break;
+			case "linkText":
+				nosLinkText++;
+				break;
+			default:
+	            throw new IllegalArgumentException("Invalid selector: " + selector);
 			}
 		}
 		return false;
@@ -57,7 +88,15 @@ public class NOWS extends ASTVisitor implements Metric {
 
 	@Override
 	public void setResult(MetricsNumber result) {
-		((SeleniumNumber)result).setNows(weakSelectors);
+		((SeleniumNumber)result).setNos(nos);
+		((SeleniumNumber)result).setNosId(nosId);
+		((SeleniumNumber)result).setNosXPath(nosXPath);
+		((SeleniumNumber)result).setNosCssSelector(nosCssSelector);
+		((SeleniumNumber)result).setNosName(nosName);
+		((SeleniumNumber)result).setNosTagName(nosTagName);
+		((SeleniumNumber)result).setNosClassName(nosClassName);
+		((SeleniumNumber)result).setNosLinkText(nosLinkText);
+
 	}
 
 }

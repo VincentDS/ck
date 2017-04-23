@@ -21,7 +21,15 @@ public class SelectorsTest extends SeleniumTest {
 	@Test
 	public void allWeakSelectors() {
 		SeleniumNumber a = (SeleniumNumber) report.getByClassName("selectors.Selectors");
-		Assert.assertEquals(6, a.getNows());
+		Assert.assertEquals(7, a.getNos());
+		Assert.assertEquals(1, a.getNosId());
+		Assert.assertEquals(1, a.getNosXPath());
+		Assert.assertEquals(1, a.getNosCssSelector());
+		Assert.assertEquals(1, a.getNosName());
+		Assert.assertEquals(1, a.getNosTagName());
+		Assert.assertEquals(1, a.getNosClassName());
+		Assert.assertEquals(1, a.getNosLinkText());
+
 	}
 
 }

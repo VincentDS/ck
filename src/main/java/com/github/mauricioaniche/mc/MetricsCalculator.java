@@ -63,7 +63,7 @@ public class MetricsCalculator {
 			log.info("Next partition");
 			ASTParser parser = ASTParser.newParser(AST.JLS8);
 			
-			String[] classpath = java.lang.System.getProperty( "java.class.path" ).split(";");
+			String[] classpath = java.lang.System.getProperty("java.class.path").split(";");
 
 //			System.out.println(Arrays.toString(classpath));
 			
@@ -115,7 +115,7 @@ public class MetricsCalculator {
 	}
 	
 	private List<Metric> SeleniumMetrics() {
-		return new ArrayList<>(Arrays.asList(new NOWS()));
+		return new ArrayList<>(Arrays.asList(new NOSE(), new NOS()));
 	}
 
 
